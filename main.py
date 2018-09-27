@@ -4,6 +4,7 @@ from docoleparser import DocOleParser
 from docconverterparser import DocConverterParser
 from htmlparser import HTMLParser
 from pdfminerparser import PDFMinerParser
+from docxxmlparser import DocxXMLParser
 
 
 def pdfminer_test():
@@ -19,6 +20,12 @@ def pdf_test():
 
 
 def docx_test():
+    docx_parser = DocxXMLParser()
+    docx_parser.parse(r'D:\Test.docx')
+    print(docx_parser.get_processed_stems())
+
+
+def docx_xml_test():
     docx_parser = DocxParser()
     docx_parser.parse(r'D:\Test.docx')
     print(docx_parser.get_processed_stems())
@@ -45,7 +52,8 @@ def html_test():
 
 if __name__ == '__main__':
     # pdf_test()
-    pdfminer_test()
+    # pdfminer_test()
+    docx_xml_test()
     # docx_test()
     # doc_ole_test() # not working
     # doc_converter_test()
