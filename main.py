@@ -3,6 +3,13 @@ from docxparser import DocxParser
 from docoleparser import DocOleParser
 from docconverterparser import DocConverterParser
 from htmlparser import HTMLParser
+from pdfminerparser import PDFMinerParser
+
+
+def pdfminer_test():
+    pdf_parser = PDFMinerParser()
+    pdf_parser.parse(r'D:\Test.pdf')
+    print(pdf_parser.get_processed_stems())
 
 
 def pdf_test():
@@ -38,7 +45,8 @@ def html_test():
 
 if __name__ == '__main__':
     # pdf_test()
+    pdfminer_test()
     # docx_test()
     # doc_ole_test() # not working
     # doc_converter_test()
-    html_test()
+    # html_test()
