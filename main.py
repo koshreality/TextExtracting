@@ -9,26 +9,26 @@ from docxxmlparser import DocxXMLParser
 
 def pdfminer_test():
     pdf_parser = PDFMinerParser()
-    pdf_parser.parse(r'D:\Test.pdf')
-    print(pdf_parser.get_processed_stems())
+    pdf_parser.parse(r'D:\Test3.pdf')
+    print(pdf_parser.get_stems())
 
 
 def pdf_test():
     pdf_parser = PDFParser()
-    pdf_parser.parse(r'D:\Test.pdf')
-    print(pdf_parser.get_processed_stems())
+    pdf_parser.parse(r'D:\Test3.pdf')
+    print(pdf_parser.get_text())
 
 
 def docx_test():
-    docx_parser = DocxXMLParser()
-    docx_parser.parse(r'D:\Test.docx')
+    docx_parser = DocxParser()
+    docx_parser.parse(r'D:\Test22.docx')
     print(docx_parser.get_processed_stems())
 
 
 def docx_xml_test():
-    docx_parser = DocxParser()
-    docx_parser.parse(r'D:\Test.docx')
-    print(docx_parser.get_processed_stems())
+    docx_parser = DocxXMLParser()
+    docx_parser.parse(r'D:\Test22.docx')
+    print(docx_parser.get_text())
 
 
 def doc_ole_test():
@@ -39,7 +39,7 @@ def doc_ole_test():
 
 def doc_converter_test():
     doc_parser = DocConverterParser()
-    doc_parser.parse(r'D:\Test.doc')
+    doc_parser.parse(r'D:\TestTable.doc')
     print(doc_parser.get_processed_stems())
 
 

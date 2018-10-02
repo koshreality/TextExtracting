@@ -26,4 +26,4 @@ class DocxXMLParser(AbstractParser):
             if texts:
                 paragraphs.append(''.join(texts))
 
-        self.text = ''.join(paragraphs)
+        self.text = '\n'.join(paragraphs)
