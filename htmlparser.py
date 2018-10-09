@@ -9,7 +9,12 @@ class HTMLParser(AbstractParser):
     def parse(self, path_to_document):
         parser = 'html.parser'
         soup = BeautifulSoup(open(path_to_document, 'rb').read(), parser)
+
+        for elem in soup.findAll(['script', 'style']):
+            elem.extract()
+
         self.text = soup.get_text()
+
         for link in soup.find_all('a'):
             self.links.append((link.get_text(), link['href']))
 
